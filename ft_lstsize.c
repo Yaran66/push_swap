@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjasmine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 11:36:39 by wjasmine          #+#    #+#             */
-/*   Updated: 2022/03/11 11:36:52 by wjasmine         ###   ########.fr       */
+/*   Created: 2022/03/13 16:44:31 by wjasmine          #+#    #+#             */
+/*   Updated: 2022/03/13 16:44:37 by wjasmine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*last;
+	int	i;
 
-	if (*lst == NULL)
+	i = 0;
+	while (lst != NULL)
 	{
-		*lst = new;
-		return ;
+		lst = lst->next;
+		i++;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	return (i);
 }

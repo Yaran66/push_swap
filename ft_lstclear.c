@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjasmine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 11:36:39 by wjasmine          #+#    #+#             */
-/*   Updated: 2022/03/11 11:36:52 by wjasmine         ###   ########.fr       */
+/*   Created: 2022/03/12 17:07:04 by wjasmine          #+#    #+#             */
+/*   Updated: 2022/03/12 17:07:10 by wjasmine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*last;
+	t_list	*tmp;
 
-	if (*lst == NULL)
+	if (*lst == NULL || del == NULL)
 	{
-		*lst = new;
 		return ;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	while (*lst != NULL)
+	{
+		tmp = *lst;
+		*lst = (*lst)->next;
+		del(tmp->content);
+		free(tmp);
+	}
+	*lst = NULL;
 }

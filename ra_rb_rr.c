@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ra_rb_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjasmine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 11:36:39 by wjasmine          #+#    #+#             */
-/*   Updated: 2022/03/11 11:36:52 by wjasmine         ###   ########.fr       */
+/*   Created: 2022/03/13 19:46:47 by wjasmine          #+#    #+#             */
+/*   Updated: 2022/03/13 19:46:58 by wjasmine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+static void	rot_first_to_last(t_list **node)
 {
-	t_list	*last;
+	t_list	*tmp;
 
-	if (*lst == NULL)
-	{
-		*lst = new;
+	if(!(*node) || !(*node)->next)
 		return ;
-	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+
+}
+
+void	ra(t_push_swap *ps)
+{
+	rot_first_to_last(&ps->a);
+	ft_putstr_fd("ra\n", 1);
+}
+
+void    rb(t_push_swap *ps)
+{
+	rot_first_to_last(&ps->b);
+	ft_putstr_fd("rb\n", 1);
+}
+
+void    rr(t_push_swap *ps)
+{
+	ra(ps);
+	rb(ps);
+	ft_putstr_fd("rr\n", 1);
 }
