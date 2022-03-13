@@ -17,7 +17,10 @@ static void	rot_first_to_last(t_list **node)
 
 	if(!(*node) || !(*node)->next)
 		return ;
-
+	tmp = *node;
+	*node = (*node)->next;
+	ft_lstadd_back(node, tmp)
+	tmp->next = NULL;
 }
 
 void	ra(t_push_swap *ps)

@@ -57,6 +57,11 @@ void	sa(t_push_swap *ps);
 void    sb(t_push_swap *ps);
 void    ss(t_push_swap *ps);
 int		ft_lstsize(t_list *lst);
+void	ra(t_push_swap *ps);
+void    rb(t_push_swap *ps);
+void    rr(t_push_swap *ps);
+void	pa(t_push_swap *ps);
+void	pb(t_push_swap *ps);
 
 void	print_arr(int *arr, int size);
 void	print_lst(t_list *lst);
