@@ -19,7 +19,7 @@ static void	rot_first_to_last(t_list **node)
 		return ;
 	tmp = *node;
 	*node = (*node)->next;
-	ft_lstadd_back(node, tmp)
+	ft_lstadd_back(node, tmp);
 	tmp->next = NULL;
 }
 
