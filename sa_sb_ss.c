@@ -13,7 +13,8 @@
 
 static void	swap(t_list **node)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	if (ft_lstsize(*node) < 2)
 		return ;
 	tmp = *node; //1
@@ -28,15 +29,15 @@ void	sa(t_push_swap *ps)
 	ft_putstr_fd("sa\n", 1);
 }
 
-void    sb(t_push_swap *ps)
+void	sb(t_push_swap *ps)
 {
-    swap(&ps->b);
-    ft_putstr_fd("sb\n", 1);
+	swap(&ps->b);
+	ft_putstr_fd("sb\n", 1);
 }
 
-void    ss(t_push_swap *ps)
+void	ss(t_push_swap *ps)
 {
-    sa(ps);
-    sb(ps);
-    ft_putstr_fd("ss\n", 1);
+	sa(ps);
+	sb(ps);
+	ft_putstr_fd("ss\n", 1);
 }

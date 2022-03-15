@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void    presort_3(t_push_swap *ps)
+void	presort_3(t_push_swap *ps)
 {
-	int    first;
-	int    second;
-	int    third;
+	int	first;
+	int	second;
+	int	third;
 
 	first = *(int *)(ps->a->content);
 	second = *(int *)(ps->a->next->content);
@@ -28,11 +28,11 @@ void    presort_3(t_push_swap *ps)
 		sa(ps);
 }
 
-void    sort_3(t_push_swap *ps)
+void	sort_3(t_push_swap *ps)
 {
-	int    first;
-	int    second;
-	int    third;
+	int	first;
+	int	second;
+	int	third;
 
 	presort_3(ps);
 	first = *(int *)(ps->a->content);
@@ -44,11 +44,11 @@ void    sort_3(t_push_swap *ps)
 		ra(ps);
 }
 
-static int    search_min(t_list *lst)
+static int	search_min(t_list *lst)
 {
-	int    steps;
-	int    min;
-	int    count;
+	int	steps;
+	int	min;
+	int	count;
 
 	steps = 0;
 	count = 0;
@@ -65,9 +65,10 @@ static int    search_min(t_list *lst)
 	}
 	return (count);
 }
-void    sort_5(t_push_swap *ps)
+
+void	sort_5(t_push_swap *ps)
 {
-	int    rot_score;
+	int	rot_score;
 
 	while (ps->size_a > 3)
 	{

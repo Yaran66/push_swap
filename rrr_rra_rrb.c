@@ -15,10 +15,10 @@ static void	revrot_last_to_first(t_list **node)
 {
 	t_list	*tmp;
 
-	if(!(*node) || !(*node)->next)
+	if (!(*node) || !(*node)->next)
 		return ;
 	tmp = *node;
-	while(tmp->next->next != NULL)
+	while (tmp->next->next != NULL)
 		tmp = tmp->next;
 	tmp->next->next = *node;
 	*node = tmp->next;
@@ -31,13 +31,13 @@ void	rra(t_push_swap *ps)
 	ft_putstr_fd("rra\n", 1);
 }
 
-void    rrb(t_push_swap *ps)
+void	rrb(t_push_swap *ps)
 {
 	revrot_last_to_first(&ps->b);
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void    rrr(t_push_swap *ps)
+void	rrr(t_push_swap *ps)
 {
 	rra(ps);
 	rrb(ps);

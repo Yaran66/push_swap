@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	char	c;
 
 	i = n;
-	if (i < 0 )
+	if (i < 0)
 	{
 		ft_putchar_fd ('-', fd);
 		i = i * (-1);

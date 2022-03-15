@@ -11,6 +11,18 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
+static int	is_space(char c)
+{
+	int	flag;
+
+	flag = 0;
+	if (c == '\t' || c == '\n' || c == '\v')
+		flag = 1;
+	if (c == '\f' || c == '\r' || c == ' ')
+		flag = 1;
+	return (flag);
+}
+
 int	ft_atoi_ps(const char *str, int *nbr)
 {
 	int		sign;
@@ -18,8 +30,7 @@ int	ft_atoi_ps(const char *str, int *nbr)
 
 	sign = 1;
 	value = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' ||
-	*str == '\r' || *str == ' ')
+	while (is_space(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{

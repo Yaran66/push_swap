@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdlib.h> // malloc free exit
 # include <unistd.h>
@@ -55,20 +55,26 @@ void	lst_cleaner(t_push_swap *ps);
 void	sort_distributor(t_push_swap *ps);
 int		ft_lstsize(t_list *lst);
 void	sa(t_push_swap *ps);
-void    sb(t_push_swap *ps);
-void    ss(t_push_swap *ps);
+void	sb(t_push_swap *ps);
+void	ss(t_push_swap *ps);
 void	ra(t_push_swap *ps);
-void    rb(t_push_swap *ps);
-void    rr(t_push_swap *ps);
+void	rb(t_push_swap *ps);
+void	rr(t_push_swap *ps);
 void	pa(t_push_swap *ps);
 void	pb(t_push_swap *ps);
 void	rra(t_push_swap *ps);
-void    rrb(t_push_swap *ps);
-void    rrr(t_push_swap *ps);
-void    sort_3(t_push_swap *ps);
-void    presort_3(t_push_swap *ps);
-void    sort_5(t_push_swap *ps);
+void	rrb(t_push_swap *ps);
+void	rrr(t_push_swap *ps);
+void	sort_3(t_push_swap *ps);
+void	presort_3(t_push_swap *ps);
+void	sort_5(t_push_swap *ps);
 void	sort_big(t_push_swap *ps);
+int		abs_(int x);
+int		max_abs(int a, int b);
+int		c_ops(int a, int b);
+void	executor(t_push_swap *ps, t_list *el);
+t_list	*change_elem(t_push_swap *ps);
+void	final_sort(t_push_swap *ps, t_list *lst,int size_a, int min);
 
 void	print_arr(int *arr, int size);
 void	print_lst(t_list *lst);

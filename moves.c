@@ -19,16 +19,16 @@ void	sort_distributor(t_push_swap *ps)
 		sort_3(ps);
 	else if (ps->size_a < 6)
 		sort_5(ps);
-	else
-		sort_big(ps);
-//	printf("sorted stack\n");// delete before final push
-//	print_lst(ps->a);
+//	else
+//		sort_big(ps);
+	printf("sorted stack\n");// delete before final push
+	print_lst(ps->a);
 }
 
 void	fill_lst(t_push_swap *ps)
 {
 	t_list	*tmplst;
-	int 	*tmp_nbr;
+	int		*tmp_nbr;
 	int		i;
 
 	i = 0;
@@ -53,11 +53,11 @@ void	fill_lst(t_push_swap *ps)
 	ps->size_a = ps->size_arr;
 }
 
-int sorted(t_list *lst)
+int	sorted(t_list *lst)
 {
 	while (lst && lst->next)
 	{
-		if(*(int *)(lst->content) > *(int *)(lst->next->content))
+		if (*(int *)(lst->content) > *(int *)(lst->next->content))
 			return (0);
 		lst = lst->next;
 	}
@@ -66,15 +66,15 @@ int sorted(t_list *lst)
 
 void	bubble(int *arr, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	int	tmp;
 
 	i = 0;
 	while (i < size)
 	{
 		j = 0;
-		while(j < size - i - 1)
+		while (j < size - i - 1)
 		{
 			if (arr[j] > arr[j + 1])
 			{
@@ -88,7 +88,7 @@ void	bubble(int *arr, int size)
 	}
 }
 
-int magic_moves(t_push_swap *ps_)
+int	magic_moves(t_push_swap *ps_)
 {
 	fill_lst(ps_);
 //	printf("filled stack a\n");// delete before final push
@@ -98,12 +98,11 @@ int magic_moves(t_push_swap *ps_)
 	if (sorted(ps_->a) != 0)
 	{
 		lst_cleaner(ps_);
-		return (-1);
+		return (0);
 	}
 	bubble(ps_->arr, ps_->size_arr);
 //	printf("sorted arr\n");// delete before final push
 //	print_arr(ps_->arr, ps_->size_arr);// delete before final push
 	sort_distributor(ps_);
-
 	return (0);
 }

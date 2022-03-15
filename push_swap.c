@@ -14,13 +14,13 @@
 int	identical_nbr(int *arr, int size)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (i < size - 1)
 	{
 		j = i + 1;
-		while(j < size)
+		while (j < size)
 		{
 			if (arr[i] == arr[j])
 				return (-1);
@@ -56,33 +56,6 @@ int	parse_argv_to_arr(int *arr, char **argv)
 	return (flag);
 }
 
-//int	ft_count_argv(char **argv)
-//{
-//	char	**array;
-//	//int		i;
-//	int		i;
-//	int 	count_argv;
-//
-//	//i = 0;
-//	count_argv = 0;
-//	while (*argv)
-//	{
-//		array = ft_split(*argv++, ' ');
-//		if (!array)
-//			error("malloc error\n");
-//	//	i++;
-//		i = 0;
-//		while (array[i])
-//		{
-//			count_argv++;
-//			free(array[i++]);
-//		}
-//		free(array);
-//	}
-//	printf("%d\n", count_argv);
-//	return (count_argv);
-//}
-
 int	ft_count_argv(char **argv)
 {
 	char	**array;
@@ -93,10 +66,10 @@ int	ft_count_argv(char **argv)
 	while (*argv)
 	{
 		if (!ft_strncmp("", *argv, 1) || !ft_strncmp (" ", *argv, 2))
-			error("Error empty argument\n");
+			error("Error\n");
 		array = ft_split(*argv++, ' ');
 		if (!array)
-			error("malloc error\n");
+			error("Error\n");
 		i = 0;
 		while (array[i])
 		{
@@ -118,7 +91,7 @@ void	init_t_push_swap(t_push_swap *ps, int size_arr)
 	if (array == NULL)
 	{
 		free(array);
-		error("array malloc Error\n");
+		error("Error\n");
 	}
 	ps->arr = array;
 	ps->size_arr = size_arr;
@@ -137,13 +110,13 @@ int	main(int argc, char **argv)
 	{
 		free(ps.arr);
 		free(ps.a);
-		error("Parser error\n");
+		error("Error\n");
 	}
 	if (identical_nbr(ps.arr, ps.size_arr) == -1)
 	{
 		free(ps.arr);
 		free(ps.a);
-		error("identical numbers error\n");
+		error("Error\n");
 	}
 	if (magic_moves(&ps) == -1)
 		error("Error\n");

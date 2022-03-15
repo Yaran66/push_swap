@@ -15,7 +15,7 @@ static void	rot_first_to_last(t_list **node)
 {
 	t_list	*tmp;
 
-	if(!(*node) || !(*node)->next)
+	if (!(*node) || !(*node)->next)
 		return ;
 	tmp = *node;
 	*node = (*node)->next;
@@ -29,13 +29,13 @@ void	ra(t_push_swap *ps)
 	ft_putstr_fd("ra\n", 1);
 }
 
-void    rb(t_push_swap *ps)
+void	rb(t_push_swap *ps)
 {
 	rot_first_to_last(&ps->b);
 	ft_putstr_fd("rb\n", 1);
 }
 
-void    rr(t_push_swap *ps)
+void	rr(t_push_swap *ps)
 {
 	ra(ps);
 	rb(ps);
