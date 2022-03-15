@@ -19,10 +19,10 @@ void	sort_distributor(t_push_swap *ps)
 		sort_3(ps);
 	else if (ps->size_a < 6)
 		sort_5(ps);
-//	else
-//		sort_big(ps);
-	printf("sorted stack\n");// delete before final push
-	print_lst(ps->a);
+	else
+		sort_big(ps);
+//	printf("sorted stack\n");// delete before final push
+//	print_lst(ps->a);
 }
 
 void	fill_lst(t_push_swap *ps)
@@ -45,7 +45,7 @@ void	fill_lst(t_push_swap *ps)
 			free(tmp_nbr);
 			free(tmplst);
 			ft_lstclear(&ps->a, free);
-			error("list fill error\n");
+			error("Error\n"); //comment
 		}
 		ft_lstadd_back(&ps->a, tmplst);
 		i++;
@@ -93,7 +93,7 @@ int	magic_moves(t_push_swap *ps_)
 	fill_lst(ps_);
 //	printf("filled stack a\n");// delete before final push
 //	print_lst(ps_->a);// delete before final push
-	//print_arr(ps_->arr, ps_->size_arr);// delete before final push
+//	print_arr(ps_->arr, ps_->size_arr);// delete before final push
 //	printf("\n");// delete before final push
 	if (sorted(ps_->a) != 0)
 	{

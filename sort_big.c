@@ -13,24 +13,18 @@
 
 static void    fill_b(t_push_swap *ps)
 {
-	t_list    *first_a;
-	int        med;
-
-	med = ps->arr[ps->size_arr / 2];
-	first_a = ps->a;
 	while (ps->size_a > 3)
 	{
-		if (*(int *) first_a->content != ps->arr[0]
-			&& *(int *) first_a->content != ps->arr[ps->size_arr - 1]
-			&& *(int *) first_a->content != ps->arr[ps->size_arr / 2])
+		if (*(int *) ps->a->content != ps->arr[0]
+			&& *(int *) ps->a->content != ps->arr[ps->size_arr - 1]
+			&& *(int *) ps->a->content != ps->arr[ps->size_arr / 2])
 		{
 			pb(ps);
-			if (*(int *) ps->b->content < med)
+			if (*(int *) ps->b->content < ps->arr[ps->size_arr / 2])
 				rb(ps);
 		}
 		else
 			ra(ps);
-		first_a = ps->a;
 	}
 }
 
@@ -85,6 +79,8 @@ static int	scoring(t_push_swap *ps, t_list *el, int i)
 	return(c_ops(el->a_score, el->b_score));
 }
 
+
+
 t_list *change_elem(t_push_swap *ps)
 {
 	int 	min;
@@ -108,7 +104,6 @@ t_list *change_elem(t_push_swap *ps)
 			min = min_ops;
 		}
 	}
-	pa(ps);
 	return(current);
 }
 
@@ -117,13 +112,20 @@ void	sort_big(t_push_swap *ps)
 	t_list	*tmp;
 
 	fill_b(ps);
-	printf("filled stack b\n");// delete before final push
-	print_lst(ps->b);
+//	printf("filled stack b\n");// delete before final push
+//	print_lst(ps->b);
 	presort_3(ps);
 	while (ps->size_b > 0)
 	{
 		tmp = change_elem(ps);
 		executor(ps, tmp);
+//		printf("filled stack b\n");// delete before final push
+//		print_lst(ps->b);
 	}
 	final_sort(ps, ps->a,ps->size_a, ps->arr[0]);
+
+//	printf("sorted stack a\n");// delete before final push
+//	print_lst(ps->a);// delete before final push
+//	printf(" stack b\n");// delete before final push
+//	print_lst(ps->b);// delete before final push
 }

@@ -66,10 +66,10 @@ int	ft_count_argv(char **argv)
 	while (*argv)
 	{
 		if (!ft_strncmp("", *argv, 1) || !ft_strncmp (" ", *argv, 2))
-			error("Error\n");
+			error("Error\n"); //comments
 		array = ft_split(*argv++, ' ');
 		if (!array)
-			error("Error\n");
+			error("Error\n"); //comments
 		i = 0;
 		while (array[i])
 		{
@@ -90,8 +90,8 @@ void	init_t_push_swap(t_push_swap *ps, int size_arr)
 	array = (int *)malloc(sizeof(int) * size_arr);
 	if (array == NULL)
 	{
-		free(array);
-		error("Error\n");
+		lst_cleaner(ps);
+		error("Error\n"); //comments
 	}
 	ps->arr = array;
 	ps->size_arr = size_arr;
@@ -108,17 +108,15 @@ int	main(int argc, char **argv)
 	init_t_push_swap(&ps, ft_count_argv(&argv[1]));
 	if (parse_argv_to_arr(ps.arr, &argv[1]) == -1)
 	{
-		free(ps.arr);
-		free(ps.a);
-		error("Error\n");
+		lst_cleaner(&ps);
+		error("Error\n"); // comment
 	}
 	if (identical_nbr(ps.arr, ps.size_arr) == -1)
 	{
-		free(ps.arr);
-		free(ps.a);
-		error("Error\n");
+		lst_cleaner(&ps);
+		error("Error\n"); // comment
 	}
-	if (magic_moves(&ps) == -1)
-		error("Error\n");
+	magic_moves(&ps);
+	lst_cleaner(&ps);
 	return (0);
 }

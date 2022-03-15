@@ -16,7 +16,7 @@
 # include <stdlib.h> // malloc free exit
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h> // delete prior final push
+//#include <stdio.h> // delete pror push
 
 typedef struct s_list {
 	void			*content;

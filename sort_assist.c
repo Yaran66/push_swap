@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	abs(int x)
+int	abs_(int x)
 {
 	if (x < 0)
 		return (-x);
@@ -20,9 +20,9 @@ int	abs(int x)
 
 int	max_abs(int a, int b)
 {
-	if (abs(a) > abs(b))
-		return (abs(a));
-	return (abs(b));
+	if (abs_(a) > abs_(b))
+		return (abs_(a));
+	return (abs_(b));
 }
 
 int	c_ops(int a, int b)
@@ -30,7 +30,7 @@ int	c_ops(int a, int b)
 	if(a * b > 0)
 		return(max_abs(a, b));
 	else
-		return(abs(a) + abs(b));
+		return(abs_(a) + abs_(b));
 }
 
 void	executor(t_push_swap *ps, t_list *el)
