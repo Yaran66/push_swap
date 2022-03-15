@@ -109,6 +109,7 @@ t_list *change_elem(t_push_swap *ps)
 		}
 	}
 	pa(ps);
+	return(current);
 }
 
 void	sort_big(t_push_swap *ps)

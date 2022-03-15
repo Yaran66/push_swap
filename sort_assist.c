@@ -56,6 +56,7 @@ void	final_sort(t_push_swap *ps, t_list *lst,int size_a, int min)
 {
 	int i;
 
+	i = 0;
 	while(lst && *(int *)lst->content != min )
 	{
 		i++;
