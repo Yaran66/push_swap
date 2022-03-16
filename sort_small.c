@@ -20,11 +20,11 @@ void	presort_3(t_push_swap *ps)
 	first = *(int *)(ps->a->content);
 	second = *(int *)(ps->a->next->content);
 	third = *(int *)(ps->a->next->next->content);
-	if (first > second && second < third && first < third) //2 1 3
+	if (first > second && second < third && first < third)
 		sa(ps);
-	else if (first > second && second > third && first > third) // 3 2 1
+	else if (first > second && second > third && first > third)
 		sa(ps);
-	else if (first < second && second > third && first < third) // 1 3 2
+	else if (first < second && second > third && first < third)
 		sa(ps);
 }
 

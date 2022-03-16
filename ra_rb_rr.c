@@ -37,7 +37,7 @@ void	rb(t_push_swap *ps)
 
 void	rr(t_push_swap *ps)
 {
-	ra(ps);
-	rb(ps);
+	rot_first_to_last(&ps->a);
+	rot_first_to_last(&ps->b);
 	ft_putstr_fd("rr\n", 1);
 }

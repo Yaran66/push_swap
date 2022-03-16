@@ -21,8 +21,6 @@ void	sort_distributor(t_push_swap *ps)
 		sort_5(ps);
 	else
 		sort_big(ps);
-//	printf("sorted stack\n");// delete before final push
-//	print_lst(ps->a);
 }
 
 void	fill_lst(t_push_swap *ps)
@@ -45,7 +43,7 @@ void	fill_lst(t_push_swap *ps)
 			free(tmp_nbr);
 			free(tmplst);
 			ft_lstclear(&ps->a, free);
-			error("Error\n"); //comment
+			error("Error\n");
 		}
 		ft_lstadd_back(&ps->a, tmplst);
 		i++;
@@ -91,18 +89,12 @@ void	bubble(int *arr, int size)
 int	magic_moves(t_push_swap *ps_)
 {
 	fill_lst(ps_);
-//	printf("filled stack a\n");// delete before final push
-//	print_lst(ps_->a);// delete before final push
-//	print_arr(ps_->arr, ps_->size_arr);// delete before final push
-//	printf("\n");// delete before final push
 	if (sorted(ps_->a) != 0)
 	{
 		lst_cleaner(ps_);
 		return (0);
 	}
 	bubble(ps_->arr, ps_->size_arr);
-//	printf("sorted arr\n");// delete before final push
-//	print_arr(ps_->arr, ps_->size_arr);// delete before final push
 	sort_distributor(ps_);
 	return (0);
 }

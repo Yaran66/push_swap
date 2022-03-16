@@ -17,10 +17,10 @@ static void	swap(t_list **node)
 
 	if (ft_lstsize(*node) < 2)
 		return ;
-	tmp = *node; //1
-	*node = (*node)->next; //2
-	tmp->next = (*node)->next; //3 = tmp->next->next
-	(*node)->next = tmp; //4
+	tmp = *node;
+	*node = (*node)->next;
+	tmp->next = (*node)->next;
+	(*node)->next = tmp;
 }
 
 void	sa(t_push_swap *ps)
@@ -37,7 +37,7 @@ void	sb(t_push_swap *ps)
 
 void	ss(t_push_swap *ps)
 {
-	sa(ps);
-	sb(ps);
+	swap(&ps->a);
+	swap(&ps->b);
 	ft_putstr_fd("ss\n", 1);
 }

@@ -13,12 +13,12 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h> // malloc free exit
+# include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-//#include <stdio.h> // delete pror push
 
-typedef struct s_list {
+typedef struct s_list
+{
 	void			*content;
 	int				a_score;
 	int				b_score;
@@ -74,8 +74,7 @@ int		max_abs(int a, int b);
 int		c_ops(int a, int b);
 void	executor(t_push_swap *ps, t_list *el);
 t_list	*change_elem(t_push_swap *ps);
-void	final_sort(t_push_swap *ps, t_list *lst,int size_a, int min);
-
+void	final_sort(t_push_swap *ps, t_list *lst, int size_a, int min);
 void	print_arr(int *arr, int size);
 void	print_lst(t_list *lst);
 void	error(char *message);

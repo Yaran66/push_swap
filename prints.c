@@ -30,7 +30,6 @@ void	print_arr(int *arr, int size)
 	int	i;
 
 	i = 0;
-
 	while (i < size)
 	{
 		ft_putnbr_fd(arr[i], 1);

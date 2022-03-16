@@ -66,10 +66,10 @@ int	ft_count_argv(char **argv)
 	while (*argv)
 	{
 		if (!ft_strncmp("", *argv, 1) || !ft_strncmp (" ", *argv, 2))
-			error("Error\n"); //comments
+			error("Error\n");
 		array = ft_split(*argv++, ' ');
 		if (!array)
-			error("Error\n"); //comments
+			error("Error\n");
 		i = 0;
 		while (array[i])
 		{
@@ -91,7 +91,7 @@ void	init_t_push_swap(t_push_swap *ps, int size_arr)
 	if (array == NULL)
 	{
 		lst_cleaner(ps);
-		error("Error\n"); //comments
+		error("Error\n");
 	}
 	ps->arr = array;
 	ps->size_arr = size_arr;
@@ -109,12 +109,12 @@ int	main(int argc, char **argv)
 	if (parse_argv_to_arr(ps.arr, &argv[1]) == -1)
 	{
 		lst_cleaner(&ps);
-		error("Error\n"); // comment
+		error("Error\n");
 	}
 	if (identical_nbr(ps.arr, ps.size_arr) == -1)
 	{
 		lst_cleaner(&ps);
-		error("Error\n"); // comment
+		error("Error\n");
 	}
 	magic_moves(&ps);
 	lst_cleaner(&ps);

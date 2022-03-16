@@ -39,7 +39,7 @@ void	rrb(t_push_swap *ps)
 
 void	rrr(t_push_swap *ps)
 {
-	rra(ps);
-	rrb(ps);
+	revrot_last_to_first(&ps->a);
+	revrot_last_to_first(&ps->b);
 	ft_putstr_fd("rrr\n", 1);
 }
