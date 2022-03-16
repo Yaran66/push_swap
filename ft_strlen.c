@@ -6,19 +6,17 @@
 /*   By: wjasmine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 19:15:21 by wjasmine          #+#    #+#             */
-/*   Updated: 2021/11/08 19:24:42 by wjasmine         ###   ########.fr       */
+/*   Updated: 2022/03/17 00:21:06 by smaar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *ch)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
+	while (ch && ch[i] != '\0')
+		++i;
 	return (i);
 }
