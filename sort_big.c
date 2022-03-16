@@ -98,7 +98,7 @@ t_list *change_elem(t_push_swap *ps)
 		i++;
 		tmp = tmp->next;
 		min_ops = scoring(ps, tmp, i);
-		if (c_ops(current->a_score, current->b_score) < min_ops)
+		if (c_ops(current->a_score, current->b_score) > min_ops)
 		{
 			current = tmp;
 			min = min_ops;
