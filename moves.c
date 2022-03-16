@@ -89,7 +89,7 @@ void	bubble(int *arr, int size)
 int	magic_moves(t_push_swap *ps_)
 {
 	fill_lst(ps_);
-	if (sorted(ps_->a) != 0)
+	if (sorted(ps_->a))
 	{
 		lst_cleaner(ps_);
 		return (0);

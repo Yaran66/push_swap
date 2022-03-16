@@ -21,6 +21,7 @@ void	error(char *message)
 void	lst_cleaner(t_push_swap *ps)
 {
 	free(ps->arr);
+	ps->arr = NULL;
 	ft_lstclear(&ps->a, free);
 	ft_lstclear(&ps->b, free);
 }

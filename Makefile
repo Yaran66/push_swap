@@ -26,7 +26,7 @@ CC			= 	gcc
 RM			= 	rm -f
 
 OPTFLAGS 	= 	-O2
-CFLAGS		= 	-Wall -Wextra -Werror -I${HEADER}
+CFLAGS		= 	-Wall -Wextra -Werror
 
 .PHONY:			all clean fclean re
 

@@ -82,6 +82,6 @@ void	sort_5(t_push_swap *ps)
 		pb(ps);
 	}
 	sort_3(ps);
-	while (ps->size_a < 5)
+	while (ps->size_b)
 		pa(ps);
 }

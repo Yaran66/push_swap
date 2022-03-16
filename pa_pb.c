@@ -26,16 +26,22 @@ static void	push(t_list **src, t_list **dest)
 
 void	pa(t_push_swap *ps)
 {
-	push(&ps->b, &ps->a);
-	ps->size_a++;
-	ps->size_b--;
+	if (ps->b)
+	{
+		push(&ps->b, &ps->a);
+		ps->size_a++;
+		ps->size_b--;
+	}
 	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_push_swap *ps)
 {
-	push(&ps->a, &ps->b);
-	ps->size_a--;
-	ps->size_b++;
+	if (ps->a)
+	{
+		push(&ps->a, &ps->b);
+		ps->size_a--;
+		ps->size_b++;
+	}
 	ft_putstr_fd("pb\n", 1);
 }

@@ -58,8 +58,8 @@ static int	scoring(t_push_swap *ps, t_list *el, int i)
 
 	up_b = i;
 	up_a = search_in_a(ps, *(int *)el->content);
-	el->a_score = - up_a;
-	el->b_score = - up_b;
+	el->a_score = -up_a;
+	el->b_score = -up_b;
 	if (c_ops(el->a_score, el->b_score)
 		> c_ops((ps->size_a - up_a), (ps->size_b - up_b)))
 	{
@@ -68,7 +68,7 @@ static int	scoring(t_push_swap *ps, t_list *el, int i)
 	}
 	if (c_ops(el->a_score, el->b_score) > c_ops(-up_a, (ps->size_b - up_b)))
 	{
-		el->a_score = - up_a;
+		el->a_score = -up_a;
 		el->b_score = (ps->size_b - up_b);
 	}
 	if (c_ops(el->a_score, el->b_score) > c_ops((ps->size_a - up_a), -up_b))

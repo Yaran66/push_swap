@@ -75,8 +75,6 @@ int		c_ops(int a, int b);
 void	executor(t_push_swap *ps, t_list *el);
 t_list	*change_elem(t_push_swap *ps);
 void	final_sort(t_push_swap *ps, t_list *lst, int size_a, int min);
-void	print_arr(int *arr, int size);
-void	print_lst(t_list *lst);
 void	error(char *message);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);

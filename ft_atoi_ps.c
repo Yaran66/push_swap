@@ -25,7 +25,7 @@ static int	is_space(char c)
 
 int	ft_atoi_ps(const char *str, int *nbr)
 {
-	int		sign;
+	int					sign;
 	unsigned long long	value;
 
 	sign = 1;
