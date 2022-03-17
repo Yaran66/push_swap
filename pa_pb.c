@@ -24,7 +24,7 @@ static void	push(t_list **src, t_list **dest)
 	}
 }
 
-void	pa(t_push_swap *ps)
+void	pa(t_push_swap *ps, int flag)
 {
 	if (ps->b)
 	{
@@ -32,10 +32,11 @@ void	pa(t_push_swap *ps)
 		ps->size_a++;
 		ps->size_b--;
 	}
-	ft_putstr_fd("pa\n", 1);
+	if (flag)
+		ft_putstr_fd("pa\n", 1);
 }
 
-void	pb(t_push_swap *ps)
+void	pb(t_push_swap *ps, int flag)
 {
 	if (ps->a)
 	{
@@ -43,5 +44,6 @@ void	pb(t_push_swap *ps)
 		ps->size_a--;
 		ps->size_b++;
 	}
-	ft_putstr_fd("pb\n", 1);
+	if (flag)
+		ft_putstr_fd("pb\n", 1);
 }

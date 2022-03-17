@@ -13,51 +13,6 @@
 #include "push_swap.h"
 #include "get_next_line.h"
 
-int	identical_nbr(int *arr, int size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (arr[i] == arr[j])
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	parse_argv_to_arr(int *arr, char **argv)
-{
-	char	**quotes;
-	int		i;
-	int		flag;
-	int		count_argv;
-
-	flag = 0;
-	count_argv = 0;
-	while (flag != -1 && *argv)
-	{
-		quotes = ft_split(*argv++, ' ');
-		i = 0;
-		while (quotes != 0 && quotes[i])
-		{
-			if (!flag && ft_atoi_ps(quotes[i], &arr[count_argv]) == -1)
-				flag = -1;
-			count_argv++;
-			free(quotes[i++]);
-		}
-		free(quotes);
-	}
-	return (flag);
-}
-
 int	ft_count_argv(char **argv)
 {
 	char	**array;
@@ -101,40 +56,40 @@ void	init_t_push_swap(t_push_swap *ps, int size_arr)
 	ps->size_b = 0;
 }
 
-void	ps_performer(t_push_swap *ps, char *line)
+static void	ps_performer(t_push_swap *ps, char *line)
 {
-	if(!ft_strncmp(line, "ra\n", 4))
-		ra(ps); // todo verboose, make silent
+	if (!ft_strncmp(line, "ra\n", 4))
+		ra(ps, 0);
 	else if (!ft_strncmp(line, "rb\n", 4))
-		rb(ps);
+		rb(ps, 0);
 	else if (!ft_strncmp(line, "rr\n", 4))
-		rr(ps);
+		rr(ps, 0);
 	else if (!ft_strncmp(line, "rra\n", 5))
-		rra(ps);
+		rra(ps, 0);
 	else if (!ft_strncmp(line, "rrb\n", 5))
-		rrb(ps);
+		rrb(ps, 0);
 	else if (!ft_strncmp(line, "rrr\n", 5))
-		rrr(ps);
+		rrr(ps, 0);
 	else if (!ft_strncmp(line, "pa\n", 4))
-		pa(ps);
+		pa(ps, 0);
 	else if (!ft_strncmp(line, "pb\n", 4))
-		pb(ps);
+		pb(ps, 0);
 	else if (!ft_strncmp(line, "sa\n", 4))
-		sa(ps);
+		sa(ps, 0);
 	else if (!ft_strncmp(line, "sb\n", 4))
-		sb(ps);
+		sb(ps, 0);
 	else if (!ft_strncmp(line, "ss\n", 4))
-		ss(ps);
+		ss(ps, 0);
 	else
 		error("Error\n");
 }
 
-void	gnl_reader(t_push_swap *ps)
+static void	gnl_reader(t_push_swap *ps)
 {
 	char	*line;
 
 	line = get_next_line(STDIN_FILENO);
-	while(line)
+	while (line)
 	{
 		ps_performer(ps, line);
 		free(line);
@@ -161,7 +116,6 @@ int	main(int argc, char **argv)
 		error("Error\n");
 	}
 	fill_lst(&ps);
-	//bubble(ps.arr, ps.size_arr);
 	gnl_reader(&ps);
 	if (sorted(ps.a) == 1 && ps.size_b == 0)
 		ft_putstr_fd("OK\n", 1);

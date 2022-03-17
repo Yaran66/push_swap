@@ -37,19 +37,19 @@ void	executor(t_push_swap *ps, t_list *el)
 {
 	while (el->a_score > 0 && el->b_score > 0 && el->a_score--
 		&& el->b_score--)
-		rrr(ps);
+		rrr(ps, 1);
 	while (el->a_score < 0 && el->b_score < 0 && el->a_score++
 		&& el->b_score++)
-		rr(ps);
+		rr(ps, 1);
 	while (el->a_score > 0 && el->a_score--)
-		rra(ps);
+		rra(ps, 1);
 	while (el->a_score < 0 && el->a_score++)
-		ra(ps);
+		ra(ps, 1);
 	while (el->b_score > 0 && el->b_score--)
-		rrb(ps);
+		rrb(ps, 1);
 	while (el->b_score < 0 && el->b_score++)
-		rb(ps);
-	pa(ps);
+		rb(ps, 1);
+	pa(ps, 1);
 }
 
 void	final_sort(t_push_swap *ps, t_list *lst, int size_a, int min)
@@ -64,11 +64,11 @@ void	final_sort(t_push_swap *ps, t_list *lst, int size_a, int min)
 	}
 	if (i < (size_a - i))
 		while (i--)
-			ra(ps);
+			ra(ps, 1);
 	else
 	{
 		i = size_a - i;
 		while (i--)
-			rra(ps);
+			rra(ps, 1);
 	}
 }

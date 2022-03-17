@@ -19,12 +19,12 @@ static void	fill_b(t_push_swap *ps)
 			&& *(int *) ps->a->content != ps->arr[ps->size_arr - 1]
 			&& *(int *) ps->a->content != ps->arr[ps->size_arr / 2])
 		{
-			pb(ps);
+			pb(ps, 1);
 			if (*(int *) ps->b->content < ps->arr[ps->size_arr / 2])
-				rb(ps);
+				rb(ps, 1);
 		}
 		else
-			ra(ps);
+			ra(ps, 1);
 	}
 }
 

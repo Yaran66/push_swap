@@ -23,21 +23,24 @@ static void	swap(t_list **node)
 	(*node)->next = tmp;
 }
 
-void	sa(t_push_swap *ps)
+void	sa(t_push_swap *ps, int flag)
 {
 	swap(&ps->a);
-	ft_putstr_fd("sa\n", 1);
+	if (flag)
+		ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(t_push_swap *ps)
+void	sb(t_push_swap *ps, int flag)
 {
 	swap(&ps->b);
-	ft_putstr_fd("sb\n", 1);
+	if (flag)
+		ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(t_push_swap *ps)
+void	ss(t_push_swap *ps, int flag)
 {
 	swap(&ps->a);
 	swap(&ps->b);
-	ft_putstr_fd("ss\n", 1);
+	if (flag)
+		ft_putstr_fd("ss\n", 1);
 }

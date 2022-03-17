@@ -21,11 +21,11 @@ void	presort_3(t_push_swap *ps)
 	second = *(int *)(ps->a->next->content);
 	third = *(int *)(ps->a->next->next->content);
 	if (first > second && second < third && first < third)
-		sa(ps);
+		sa(ps, 1);
 	else if (first > second && second > third && first > third)
-		sa(ps);
+		sa(ps, 1);
 	else if (first < second && second > third && first < third)
-		sa(ps);
+		sa(ps, 1);
 }
 
 void	sort_3(t_push_swap *ps)
@@ -39,9 +39,9 @@ void	sort_3(t_push_swap *ps)
 	second = *(int *)(ps->a->next->content);
 	third = *(int *)(ps->a->next->next->content);
 	if (first < second && second > third && first > third)
-		rra(ps);
+		rra(ps, 1);
 	else if (first > second && second < third && first > third)
-		ra(ps);
+		ra(ps, 1);
 }
 
 static int	search_min(t_list *lst)
@@ -75,13 +75,13 @@ void	sort_5(t_push_swap *ps)
 		rot_score = search_min(ps->a);
 		if (rot_score < ps->size_a - rot_score)
 			while (rot_score--)
-				ra(ps);
+				ra(ps, 1);
 		else
 			while (ps->size_a - rot_score++ > 0)
-				rra(ps);
-		pb(ps);
+				rra(ps, 1);
+		pb(ps, 1);
 	}
 	sort_3(ps);
 	while (ps->size_b)
-		pa(ps);
+		pa(ps, 1);
 }

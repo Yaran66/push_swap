@@ -23,21 +23,24 @@ static void	rot_first_to_last(t_list **node)
 	tmp->next = NULL;
 }
 
-void	ra(t_push_swap *ps)
+void	ra(t_push_swap *ps, int flag)
 {
 	rot_first_to_last(&ps->a);
-	ft_putstr_fd("ra\n", 1);
+	if (flag)
+		ft_putstr_fd("ra\n", 1);
 }
 
-void	rb(t_push_swap *ps)
+void	rb(t_push_swap *ps, int flag)
 {
 	rot_first_to_last(&ps->b);
-	ft_putstr_fd("rb\n", 1);
+	if (flag)
+		ft_putstr_fd("rb\n", 1);
 }
 
-void	rr(t_push_swap *ps)
+void	rr(t_push_swap *ps, int flag)
 {
 	rot_first_to_last(&ps->a);
 	rot_first_to_last(&ps->b);
-	ft_putstr_fd("rr\n", 1);
+	if (flag)
+		ft_putstr_fd("rr\n", 1);
 }

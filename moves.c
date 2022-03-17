@@ -14,7 +14,7 @@
 void	sort_distributor(t_push_swap *ps)
 {
 	if (ps->size_a == 2)
-		sa(ps);
+		sa(ps, 1);
 	else if (ps->size_a == 3)
 		sort_3(ps);
 	else if (ps->size_a < 6)
