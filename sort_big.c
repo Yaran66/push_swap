@@ -6,7 +6,7 @@
 /*   By: wjasmine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:32:46 by wjasmine          #+#    #+#             */
-/*   Updated: 2022/03/14 13:32:50 by wjasmine         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:27:04 by wjasmine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -81,7 +81,6 @@ static int	scoring(t_push_swap *ps, t_list *el, int i)
 
 t_list	*change_elem(t_push_swap *ps)
 {
-	int		min;
 	int		i;
 	t_list	*tmp;
 	t_list	*current;
@@ -90,17 +89,14 @@ t_list	*change_elem(t_push_swap *ps)
 	tmp = ps->b;
 	current = ps->b;
 	i = 0;
-	min = scoring(ps, tmp, i);
+	min_ops = scoring(ps, tmp, i);
 	while (tmp->next)
 	{
 		i++;
 		tmp = tmp->next;
 		min_ops = scoring(ps, tmp, i);
 		if (c_ops(current->a_score, current->b_score) > min_ops)
-		{
 			current = tmp;
-			min = min_ops;
-		}
 	}
 	return (current);
 }
